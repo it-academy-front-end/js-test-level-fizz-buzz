@@ -23,8 +23,6 @@ button.addEventListener('click', () => {
 });
 
 
-
-
 function fizzBuzz(num) {
     if (num != 0) {
         if (num % 3 === 0 && num % 5 == 0) {
@@ -63,10 +61,10 @@ function fizzBuzz(num) {
         } else {
             resp = {
                 status: "error", // Código indicando éxito o error
-                message: "Número no divisible por 3 ni 5", // Mensaje
+                message: "Número no es divisible por 3 ni 5", // Mensaje
                 data: {
                     number: num, // Número evaluado
-                    result: 'No es divisible por 3 ni 5' // Resultado esperado
+                    result: 'Número no es divisible por 3 ni 5' // Resultado esperado
                 }
             };
             return resp;
