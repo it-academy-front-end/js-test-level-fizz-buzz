@@ -11,12 +11,12 @@ historial = [[]];
 let resp = "";
 
 button.addEventListener('click', () => {
-    if (input.value != "") { 
+    if (input.value != "") {
         const respuesta = fizzBuzz(input.value);
-        historial.push([input.value, respuesta]);
+        historial.push([respuesta.data.number, respuesta.data.result]);
         console.log(historial);
         const dynamicLi = document.createElement('li');
-        dynamicLi.textContent = `${input.value} , ${respuesta}`;
+        dynamicLi.textContent = `${respuesta.data.number} , ${respuesta.data.result}`;
         listUl.appendChild(dynamicLi);
         value = "";
     }
@@ -28,16 +28,57 @@ button.addEventListener('click', () => {
 function fizzBuzz(num) {
     if (num != 0) {
         if (num % 3 === 0 && num % 5 == 0) {
-            resp = 'FizzBuzz';
+            resp = {
+                status: "ok", // Código indicando éxito o error
+                message: "El número es divisible por 3 y por 5", // Mensaje
+                data: {
+                    number: num, // Número evaluado
+                    result: 'FizzBuzz' // Resultado esperado
+                }
+            };
             return resp;
+
         } else if (num % 3 === 0) {
-            resp = 'Fizz';
+            resp = {
+                status: "ok", // Código indicando éxito o error
+                message: "El número es divisible por 3", // Mensaje
+                data: {
+                    number: num, // Número evaluado
+                    result: 'Fizz' // Resultado esperado
+                }
+            };
             return resp;
+
         } else if (num % 5 === 0) {
-            resp = 'Buzz';
+            resp = {
+                status: "ok", // Código indicando éxito o error
+                message: "El número es divisible por 3", // Mensaje
+                data: {
+                    number: num, // Número evaluado
+                    result: 'Buzz' // Resultado esperado
+                }
+            };
             return resp;
+
         } else {
-            return 'no es multiplo';
+            resp = {
+                status: "error", // Código indicando éxito o error
+                message: "Número no divisible por 3 ni 5", // Mensaje
+                data: {
+                    number: num, // Número evaluado
+                    result: 'No es divisible por 3 ni 5' // Resultado esperado
+                }
+            };
+            return resp;
         }
     }
 }
+/*
+{
+    status: "ok", // Código indicando éxito o error
+    message: "El número es divisible por 3", // Mensaje
+    data: {
+        number: num, // Número evaluado
+        result: 'Fizz' // Resultado esperado
+        }
+}*/
