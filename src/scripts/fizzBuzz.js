@@ -10,3 +10,23 @@
             }
     }
  * */ 
+
+    historial = [[]];
+    let resp = "";
+
+    function fizzBuzz(num) {
+        if (num != 0) {
+            if (num % 3 === 0 && num % 5 == 0) {
+                resp = 'FizzBuzz';
+                return resp;
+            } else if (num % 3 === 0) {
+                resp = 'Fizz';
+                return resp;
+            } else if (num % 5 === 0) {
+                resp = 'Buzz';
+                return resp;
+            } else {
+                return 'no es multiplo';
+            }
+        }
+    }
