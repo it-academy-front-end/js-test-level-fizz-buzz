@@ -1,3 +1,0 @@
-/**
- * Responsabilidad: gestionar los eventos
- * */ 
